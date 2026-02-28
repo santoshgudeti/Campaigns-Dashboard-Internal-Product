@@ -1,4 +1,4 @@
-import { Campaign, CampaignQueryParams, CampaignsResponse } from '../types/campaign';
+import { CampaignQueryParams, CampaignsResponse } from '../types/campaign';
 import { campaigns } from '../data/seed';
 
 export function getCampaigns(params: CampaignQueryParams): CampaignsResponse {

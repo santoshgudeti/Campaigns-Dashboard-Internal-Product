@@ -31,9 +31,11 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Campaigns API running on http://localhost:${PORT}`);
-    console.log(`📊 Try: http://localhost:${PORT}/api/campaigns`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Campaigns API running on http://localhost:${PORT}`);
+        console.log(`📊 Try: http://localhost:${PORT}/api/campaigns`);
+    });
+}
 
 export default app;
